@@ -2,9 +2,9 @@
   "name": "crud-dev-main",
   "version": "1.0.0",
   "description": "![000000087734](https://github.com/2023-DWWM-1-Villeneuve-d-Ascq/Crud-maquette/assets/90885543/a6372530-ff7b-4d10-8e05-b6a79984c3a1)",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "nodemon server.js"
   },
   "author": "Me",
   "license": "ISC"
