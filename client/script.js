@@ -13,6 +13,10 @@ fetch(url) //récupére l'url
                 <div class='bloc'> 
                 <p> ${element.Lastname}</p>
                 <p> ${element.Firstname}</p>
+                <p> ${element.Address}</p>
+                <p> ${element.Zipcode}</p>
+                <p> ${element.City}</p>
+                <p> ${element.Phonenumber}</p>
                 <p> ${element.Email}</p>
                 </div>` // innerHtml --> écrire du html dans du js
             })

@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // urlencoded : pr laisser l
 //use cors
 app.use(
     cors({
-    origin: 'http://localhost:5500', // url du client --> donne l'autorisation d'accès au client 
+    origin: 'http://localhost:5500/client', // url du client --> donne l'autorisation d'accès au client 
     optionSuccessStatus: 200, 
 })
 );
