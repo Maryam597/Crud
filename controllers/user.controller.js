@@ -18,7 +18,7 @@ const createUser = (req, res) => {
 
    if (!email || !lastname || !firstname || !address || !city || !zipcode || !phonenumber ) {
      return res.status(400).json({
-        error: 'Email ou mot de passe manquant'
+        error: 'Données manquantes '
      }) 
    }
 

@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // urlencoded : pr laisser l
 app.use(
     cors({
 
-    origin: 'localhost:5500',
+    origin: 'localhost:8000',
     optionSuccessStatus: 200, 
 })
 );
@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 const start = async () => {   // fonction fléchée 
     try {
         await connectDB();
-        const port = process.env.PORT || 5500;
+        const port = process.env.PORT || 8000;
         app.listen(port, () => {
             console.log(`Le serveur a démarré sur le port ${port}`);
         })
