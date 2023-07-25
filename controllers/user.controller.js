@@ -23,7 +23,7 @@ const createUser = (req, res) => {
    }
 
    const query = 'INSERT INTO user (email, lastname, firstname, address, city, zipcode, phonenumber) VALUES (?, ?, ?, ?, ?, ?, ?)';
-   conn.query(query, [lastname, firstname, address, city, zipcode, email, password, phonenumber], (err) => {
+   conn.query(query, [lastname, firstname, address, city, zipcode, email, phonenumber], (err) => {
 
     if(err) {
         console.error('Erreur lors de l\'insertion d\'un utilisateur :' + err);

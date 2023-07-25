@@ -21,8 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // urlencoded : pr laisser l
 //use cors
 app.use(
     cors({
-
-    origin: 'localhost:8000',
+    origin: 'http://localhost:5501', // url du client --> donne l'autorisation d'accès au client 
     optionSuccessStatus: 200, 
 })
 );
@@ -39,7 +38,7 @@ app.get('/', (req, res) => {
 const start = async () => {   // fonction fléchée 
     try {
         await connectDB();
-        const port = process.env.PORT || 8000;
+        const port = process.env.PORT || 5500; // port de base OU bien port de secours 
         app.listen(port, () => {
             console.log(`Le serveur a démarré sur le port ${port}`);
         })
