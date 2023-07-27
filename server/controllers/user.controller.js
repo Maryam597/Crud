@@ -34,6 +34,24 @@ const createUser = (req, res) => {
 });
 };
 
+const deleteUser = (req, res) => {
+    const query = `DELETE FROM user WHERE id = ?` // const query = `DELETE FROM user WHERE id = ?`
+    
+    conn.query(query,[req.params.id], (err, result) => {
+        if(err) {
+            console.error('Erreur lors de la récupération des données :' + err);
+            res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+        }
+        else {
+            res.status(200).json({ message: 'Utilisateur supprimé'});
+        }
+
+    })
+
+}; 
+
+
+
 // Get all users
 const getAllUsers = (req, res) => {
     const query = 'SELECT * FROM user'; 
@@ -52,4 +70,5 @@ const getAllUsers = (req, res) => {
 module.exports = {
     createUser,
     getAllUsers,
+    deleteUser,
 };

@@ -8,5 +8,9 @@ router.post('/register', userController.createUser);
 // Get all users 
 router.get('/all', userController.getAllUsers);
 
+router.delete('/user/:id', userController.deleteUser);
+
 
 module.exports = router; 
+
+
