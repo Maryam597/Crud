@@ -10,7 +10,6 @@ const conn = mysql.createConnection({
 
 
 // Register a new user 
-
 const createUser = (req, res) => {
     // Utilise req.body de body.parser
    const { lastname, firstname, address, city, zipcode, email, phonenumber } = req.body;
@@ -34,6 +33,48 @@ const createUser = (req, res) => {
 });
 };
 
+
+
+
+const updateUser = (req, res) => {
+    const { lastname, firstname, address, city, zipcode, email, phonenumber } = req.body;
+
+   // Vérifier si les champs sont remplis
+    // if (!lastname || !firstname || !address || !city || !zipcode || !email || !phonenumber ){
+    //     return res.status(400).json({ error: 'Aucune donnée modifiée' })
+    // }
+
+    const query = 'UPDATE user SET lastname = ?, firstname = ?, address = ?, zipcode = ?, city = ?, phonenumber = ?, email = ? Where id = ? ';
+
+
+      // Exécute la requête SQL avec les données fournies
+
+    conn.query(query, [ lastname, firstname, address, city, zipcode, email, phonenumber, req.params.id ], (err) => {
+        if(err) {
+            console.error('Erreur lors de l\'insertion d\'un utilisateur :' + err);
+            res.status(500).json({ error: 'Erreur lors de la modification des données' });
+        } else {
+            console.log(res);
+            res.status(200).json({ message: 'Données de l\'utilisateur modifiées'});
+        }
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const deleteUser = (req, res) => {
     const query = `DELETE FROM user WHERE id = ?` // const query = `DELETE FROM user WHERE id = ?`
     
@@ -49,7 +90,6 @@ const deleteUser = (req, res) => {
     })
 
 }; 
-
 
 
 // Get all users
@@ -71,4 +111,5 @@ module.exports = {
     createUser,
     getAllUsers,
     deleteUser,
+    updateUser,
 };

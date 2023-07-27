@@ -8,6 +8,8 @@ router.post('/register', userController.createUser);
 // Get all users 
 router.get('/all', userController.getAllUsers);
 
+router.put('/user/:id', userController.updateUser);
+
 router.delete('/user/:id', userController.deleteUser);
 
 
