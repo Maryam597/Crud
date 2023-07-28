@@ -39,10 +39,6 @@ const createUser = (req, res) => {
 const updateUser = (req, res) => {
     const { lastname, firstname, address, city, zipcode, email, phonenumber } = req.body;
 
-   // Vérifier si les champs sont remplis
-    // if (!lastname || !firstname || !address || !city || !zipcode || !email || !phonenumber ){
-    //     return res.status(400).json({ error: 'Aucune donnée modifiée' })
-    // }
 
     const query = 'UPDATE user SET lastname = ?, firstname = ?, address = ?, zipcode = ?, city = ?, phonenumber = ?, email = ? Where id = ? ';
 
@@ -65,8 +61,8 @@ const deleteUser = (req, res) => {
     
     conn.query(query,[req.params.id], (err, result) => {
         if(err) {
-            console.error('Erreur lors de la récupération des données :' + err);
-            res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+            console.error('Erreur lors de la suppression des données :' + err);
+            res.status(500).json({ error: 'Erreur lors de la suppression des données' });
         }
         else {
             res.status(200).json({ message: 'Utilisateur supprimé'});
