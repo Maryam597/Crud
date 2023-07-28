@@ -60,23 +60,8 @@ const updateUser = (req, res) => {
     });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const deleteUser = (req, res) => {
-    const query = `DELETE FROM user WHERE id = ?` // const query = `DELETE FROM user WHERE id = ?`
+    const query = `DELETE FROM user WHERE id = ?`
     
     conn.query(query,[req.params.id], (err, result) => {
         if(err) {
