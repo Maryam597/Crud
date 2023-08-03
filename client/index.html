@@ -11,13 +11,112 @@
 </head>
 <body>
 
+    <div id="container">
+
     <header>
     <h1>Formulaire d'inscription </h1>
 </header>
-    
-    <div id="root"></div>
+<div id="root">
+
+        <table id="table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Adresse</th>
+                    <th>Code Postal</th>
+                    <th>Ville</th>
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Modifier</th>
+                    <th>Supprimer</th>
+
+                </tr>
+
+            </thead>
+            <tbody id="userTableBody"></tbody>
+        </table>
+
+     </div>
+
+    </div>
+
+    <button id="myBtn">Ajouter</button>
     
 
+
+    <div id="myModal" class="modal" role="dialog">
+        <div class="modal-content">
+
+<span class="close">&times;</span>
+
+<h1>Formulaire d'inscription</h1>
+
+<form id="form">
+    
+<label for="lastname">Nom </label> <input type="text" id="lastname" name="name" required>
+<label for="firstname">Prénom </label> <input type="text" id="firstname" name="name" required>
+<label for="address">Adresse </label> <input type="text" id="address" name="name" required>
+<label for="zipcode">Code Postal </label> <input type="text" id="zipcode" name="name" required>
+<label for="city">Ville </label> <input type="text" id="city" name="name" required>
+<label for="email">email </label> <input type="text" id="email" name="name" required>
+<label for="phonenumber">Téléphone </label> <input type="text" id="phonenumber" name="name" required>
+
+
+<!-- <button type="submit" class="Btn" id="registerbtn"> Enregistrer</button> -->
+<input class="Btn" type="submit" value="Enregistrer">
+</form>
+
+</div>
+
+
+
+
+</div>
+
+<div id="modal2" class="modal" role="dialog">
+
+    <div class="modal-content2">
+        <span class="close">&times;</span>
+
+        <h2>Etes-vous sûr(e) de vouloir supprimer? </h2>
+
+        <div class="yesno">
+        <input type="submit"  id="yes" value="Oui">
+        <input type="submit"  id="no" value="Non">
+    </div>
+
+
+</div>
+</div>
+
+<div id="modale3" class="modal" role="dialog">
+    <div class="modal-content">
+
+<span class="close">&times;</span>
+
+<h1>Modification des données</h1>
+
+<form id="form2">
+
+<label for="lastname">Nom </label> <input type="text" id="lastname2" name="name" required>
+<label for="firstname">Prénom </label> <input type="text" id="firstname2" name="name" required>
+<label for="address">Adresse </label> <input type="text" id="address2" name="name" required>
+<label for="zipcode">Code Postal </label> <input type="text" id="zipcode2" name="name" required>
+<label for="city">Ville </label> <input type="text" id="city2" name="name" required>
+<label for="email">email </label> <input type="text" id="email2" name="name" required>
+<label for="phonenumber">Téléphone </label> <input type="text" id="phonenumber2" name="name" required>
+
+
+<!-- <button type="submit" class="Btn" id="registerbtn"> Enregistrer</button> -->
+<input id="update" class="Btn" type="submit" value="Enregistrer les modifications">
+</form>
+
+</div>
+</div>
+
+
     <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/34fd8811a2.js" crossorigin="anonymous"></script>
 </body>
 </html>

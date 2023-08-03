@@ -15,13 +15,13 @@ const createUser = (req, res) => {
    const { lastname, firstname, address, city, zipcode, email, phonenumber } = req.body;
    // Vérifier si les champs sont remplis
 
-   if (!email || !lastname || !firstname || !address || !city || !zipcode || !phonenumber ) {
+   if ( !lastname || !firstname || !address || !city || !zipcode || !email || !phonenumber ) {
      return res.status(400).json({
         error: 'Données manquantes '
      }) 
    }
 
-   const query = 'INSERT INTO user (email, lastname, firstname, address, city, zipcode, phonenumber) VALUES (?, ?, ?, ?, ?, ?, ?)';
+   const query = 'INSERT INTO user (lastname, firstname, address, city, zipcode, email, phonenumber) VALUES (?, ?, ?, ?, ?, ?, ?)';
    conn.query(query, [lastname, firstname, address, city, zipcode, email, phonenumber], (err) => {
 
     if(err) {
@@ -40,7 +40,7 @@ const updateUser = (req, res) => {
     const { lastname, firstname, address, city, zipcode, email, phonenumber } = req.body;
 
 
-    const query = 'UPDATE user SET lastname = ?, firstname = ?, address = ?, zipcode = ?, city = ?, phonenumber = ?, email = ? Where id = ? ';
+    const query = 'UPDATE user SET lastname = ?, firstname = ?, address = ?, city = ?, zipcode = ?, email = ?, phonenumber = ? Where id = ? ';
 
 
       // Exécute la requête SQL avec les données fournies
