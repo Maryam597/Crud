@@ -4,7 +4,6 @@ const conn = mysql.createConnection({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-
 })
 
 
@@ -67,9 +66,7 @@ const deleteUser = (req, res) => {
         else {
             res.status(200).json({ message: 'Utilisateur supprimé'});
         }
-
     })
-
 }; 
 
 
@@ -84,7 +81,6 @@ const getAllUsers = (req, res) => {
         else {
             res.status(200).json(result);
         }
-
     })
 }
 

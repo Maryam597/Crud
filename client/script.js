@@ -43,14 +43,19 @@ function fetchUsers() {
 
               var modale3 = document.getElementById("modale3");
               const updatebtn = document.querySelectorAll('.updatebtn')
+              const inputid = document.querySelector('#id')
 
 
               updatebtn.forEach(element => {
-
+                console.log("btn ",updatebtn); 
                 element.addEventListener('click', (e) => {
                   modale3.style.display = "block";
+                  inputid.value =  element.id;
+                  console.log("----------------------------------------");
+                  console.log(element);
+                  console.log("----------------------------------------");
 
-
+                
 
                 })
 
@@ -152,7 +157,7 @@ var modal = document.getElementById("myModal");
 const btn = document.getElementById('myBtn')
 btn.addEventListener('click', (e) => {
   modal.style.display = "block";
-})
+
 
 onclick = function () {
   modal.style.display = "block";
@@ -171,13 +176,15 @@ window.onclick = function (event) {
   }
 }
 
+})
+
 
 
 
 
 const form = document.getElementById('form')
 
-const btnregister = document.getElementById('registerbtn')
+const btnregister = document.getElementById('Btn')
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
