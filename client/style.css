@@ -135,10 +135,13 @@ input {
 
 #updatebtn {
 	width : 470px;
+	cursor: pointer;
 }
 
 #registerbtn {
 	display: flex; 
+	cursor: pointer;
+
 
 }
 

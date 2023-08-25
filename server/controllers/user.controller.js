@@ -55,6 +55,23 @@ const updateUser = (req, res) => {
     });
 };
 
+const getOneUser = (req, res) => {
+    const userId = req.params.id;
+        const query = `SELECT Lastname, Firstname, Address, City, Zipcode, Email, Phonenumber FROM user WHERE id = ${userId}` ;
+        conn.query(query, (err, result) => {
+            if(err) {
+                console.error('Erreur lors de la suppression des données :' + err);
+                res.status(500).json({ error: 'Erreur lors de la suppression des données' });
+            }
+            else {
+                res.status(200).json(result);
+            }
+        })
+
+
+
+}
+
 const deleteUser = (req, res) => {
     const query = `DELETE FROM user WHERE id = ?`
     
@@ -84,9 +101,12 @@ const getAllUsers = (req, res) => {
     })
 }
 
+
+
 module.exports = {
     createUser,
     getAllUsers,
     deleteUser,
     updateUser,
+    getOneUser,
 };
